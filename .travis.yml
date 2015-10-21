@@ -1,0 +1,15 @@
+language: haskell
+ghc:
+  - 7.4
+  - 7.6
+  - 7.8
+os:
+  - linux
+notifications:
+  email: false
+before_script:
+  - cabal sandbox init
+  - cabal install --only-dependencies
+script:
+  - cabal configure --ghc-option=-Werror
+  - cabal build
