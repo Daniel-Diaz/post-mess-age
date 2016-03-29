@@ -1,5 +1,5 @@
 name: post-mess-age
-version: 0.2.0.0
+version: 0.2.1.0
 synopsis: Send messages to a handle concurrently without getting them mixed.
 description:
   Do you have a program that output messages to the screen from different

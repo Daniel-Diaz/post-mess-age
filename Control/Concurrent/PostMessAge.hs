@@ -14,6 +14,8 @@ module Control.Concurrent.PostMessAge (
     -- * Check passer status
   , isPasserClosed
   , isPasserOpen
+    -- * Handle
+  , passerHandle
   ) where
 
 import Control.Monad (when)
@@ -27,7 +29,7 @@ data PasserStatus = Open | Closed
 --   Use 'postMessage' to send message to a passer object.
 data Passer handle msg = Passer
   { passerStatus  :: MVar PasserStatus
-  , passerHandle  :: handle
+  , passerHandle  :: handle -- ^ Return the handle used by a passer object.
   , passerChannel :: Chan (Maybe msg)
     }
 
